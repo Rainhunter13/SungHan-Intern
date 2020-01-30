@@ -51,16 +51,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\u\PycharmProjects\parse2" />
+      <recent name="C:\Users\u\PycharmProjects\parse2\Static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\u\PycharmProjects\parse2\unused" />
       <recent name="C:\Users\u\PycharmProjects\parse2\static" />
       <recent name="C:\Users\u\PycharmProjects\parse2\Static" />
       <recent name="C:\Users\u\PycharmProjects\parse2\templates" />
       <recent name="C:\Users\u\PycharmProjects\parse2" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\u\PycharmProjects\parse2" />
-      <recent name="C:\Users\u\PycharmProjects\parse2\Static" />
     </key>
   </component>
   <component name="RunManager" selected="Python.app">
@@ -233,7 +233,7 @@
       <workItem from="1579651802823" duration="21862000" />
       <workItem from="1580170364812" duration="26538000" />
       <workItem from="1580256251923" duration="18592000" />
-      <workItem from="1580342429084" duration="7973000" />
+      <workItem from="1580342429084" duration="8786000" />
     </task>
     <servers />
   </component>
@@ -241,10 +241,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="182" key="#Notifications" timestamp="1577755687478">
+    <state x="552" y="182" key="#Notifications" timestamp="1580351563780">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="182" key="#Notifications/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1577755687478" />
+    <state x="552" y="182" key="#Notifications/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580351563780" />
     <state x="377" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579228751613">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -257,10 +257,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="278" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580350268052" />
-    <state x="731" y="412" width="262" height="208" key="Github.ShareDialog" timestamp="1580350450721">
+    <state x="731" y="412" width="262" height="208" key="Github.ShareDialog" timestamp="1580351526399">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="731" y="412" width="262" height="208" key="Github.ShareDialog/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580350450721" />
+    <state x="731" y="412" width="262" height="208" key="Github.ShareDialog/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580351526399" />
     <state x="652" y="228" key="Github.UntrackedFilesDialog" timestamp="1580350465713">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
