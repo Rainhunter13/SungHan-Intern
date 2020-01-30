@@ -233,7 +233,7 @@
       <workItem from="1579651802823" duration="21862000" />
       <workItem from="1580170364812" duration="26538000" />
       <workItem from="1580256251923" duration="18592000" />
-      <workItem from="1580342429084" duration="8786000" />
+      <workItem from="1580342429084" duration="9520000" />
     </task>
     <servers />
   </component>
@@ -305,10 +305,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580350274431" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1580350297012">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1580352222685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580350297012" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580352222685" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1579251028152">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -318,10 +318,10 @@
     </state>
     <state x="664" y="348" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580342438078" />
     <state x="664" y="348" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577156513826" />
-    <state x="766" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580281443395">
+    <state x="766" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580352208086">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="766" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580281443395" />
+    <state x="766" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580352208086" />
     <state x="-6" y="171" width="1736" height="856" key="dock-window-1" timestamp="1579480220180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -330,6 +330,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="100" y="100" width="1720" height="840" key="dock-window-2/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1577776464556" />
+    <state x="655" y="322" key="git4idea.merge.GitPullDialog" timestamp="1580352213797">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="655" y="322" key="git4idea.merge.GitPullDialog/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580352213797" />
     <state x="450" y="201" width="672" height="678" key="search.everywhere.popup" timestamp="1580347031905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
