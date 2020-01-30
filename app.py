@@ -1,51 +1,71 @@
-# LIBRARIES
+# IMPORT FUNCTIONS FROM OTHER FILES
 from temp_report import Temp_find_interval
-import pandas as pd
-import requests
+
+# LIBRARIES
+# flask python framework - main engine of the app
 from flask import Flask, render_template, url_for, request, redirect, session
+# flask support packages for working with forms (e.g. login form)
 from flask_wtf import FlaskForm
 from wtforms import SubmitField, BooleanField
+# to use pandas data-frames (convenient when working with tables)
+import pandas as pd
+# to make HTTP requests - to access data from web pages
+import requests
+# for accessing current date
 from datetime import date, datetime
+# for Niagara AX/N4 authentication
 from pyhaystack.client.niagara import NiagaraHaystackSession
 from pyhaystack.client.niagara import Niagara4HaystackSession
+# for parsing data (from HTML code)
 from bs4 import BeautifulSoup
 
+
 # GLOBAL PARAMETERS - FOR OPERATORS
+# initially haven't set yet (until first use of the application)
 ip = ''
 station = ''
 username = ''
 password = ''
 points = []
-interval = 10
-version = '3'
+interval = 0
+version = ''
 
 # DEFAULT PARAMETERS FOR SERVER
+# initially haven't set yet
 default_ip = ''
 default_username = ''
 default_password = ''
 
 
+# CREATE FLASK APP, CONFIGURE SETTINGS
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'you-will-never-guess'
+app.config['SECRET_KEY'] = 'you-will-never-guess'   # secret key - any string you want
 
 
+# CLASSES FOR HTTP FORMS
 class DateForm(FlaskForm):
     submit = SubmitField('Show Report')
 
+
 class PointForm(FlaskForm):
     submit = SubmitField('Set Report')
+
 
 class LoginForm(FlaskForm):
     remember_me = BooleanField('Save as default')
 
 
+# HOME PAGE
 @app.route('/')
 @app.route('/index/')
 def index():
-    if not 'login' in session:
+    # initiate session if not yet
+    if 'login' not in session:
         session_init()
-    return render_template("index.html", title = "HOME")
+    return render_template("index.html", title="HOME")    # go to index.html
 
+
+# initiating session i.e. define session attributes
 def session_init():
     session['login'] = False
     session['ip'] = ''
@@ -55,22 +75,29 @@ def session_init():
     session['station'] = ''
     session['interval'] = '10'
     session['points'] = []
-    session["all_stations"] = []
+    session["all_stations"] = []    # all possible stations for the currently choosen station
 
 
+# LOGIN PAGE
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if not 'login' in session:
+    # initiate session if not yet
+    if 'login' not in session:
         session_init()
     global ip, version, username, password
-    global default_ip, default_password, default_username, default_version
+    global default_ip, default_password, default_username
+    # create object of class LoginForm
     form = LoginForm()
-    if request.method=='GET':
+    # response depends on type of the request
+    if request.method == 'GET':
+        # if user just opens login page
         if session['login']==True:
+            # proceed to choosing of station/points if already log in
             return redirect(url_for("engineer"))
         else:
-            return render_template("login.html", title = "Login", form=form, error = 0, ip=default_ip,
-                                   username=default_username, password=default_password, all_stations = session['all_stations'])
+            # go to login.html if not log in (with some input variables: page title, form, error=1 if wrong password,
+            # default server values)
+            return render_template("login.html", title = "Login", form=form, error = 0, ip=default_ip, username=default_username, password=default_password)
     else:
         if check_login(request.form['ip'], request.form['username'], request.form['password']):
             session['login'] = True
