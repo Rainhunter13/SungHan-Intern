@@ -1,0 +1,185 @@
+{% extends "base_no_bottom.html" %}
+
+{% block content %}
+    <h1 align="center">SUNGHAN CORPORATION</h1>
+    <h2>Report for {{date}} :</h2>
+
+    <script>
+        var cur = 1;
+
+        // PAGE BUTTONS
+
+        var n = '{{n_reports}}';
+        for (var i=1; i<=n; i++) {
+            var btn =  document.createElement("button");
+            btn.setAttribute("class", "page");
+            btn.id = "page" + i.toString();
+            btn.innerHTML = "Page " + i.toString();
+            document.body.appendChild(btn);
+        }
+        document.getElementById("page1").style.backgroundColor = "darkblue";
+
+        for (var j=1; j<=n; j++) {
+            var bt = document.getElementById("page" + j.toString());
+            bt.onclick = function () {
+                for (var k = 1; k <= n; k++) {
+                    document.getElementById("page" + k.toString()).style.backgroundColor = "mediumblue";
+                }
+                this.style.backgroundColor = "darkblue";
+
+                var ind = parseInt(this.id.substr(4));
+
+                cur = ind;
+                var columns_names_list = '{{columns_names_list}}';
+                columns_names_list = columns_names_list.substr(2, columns_names_list.length-4);
+                var row_data_list = '{{row_data_list}}';
+                row_data_list = row_data_list.substr(3, row_data_list.length-6);
+                var col = columns_names_list.split("], [");
+                var row = row_data_list.split("]], [[");
+
+                var x = col[ind-1];
+                var c = x.split("&#39;, &#39;");
+                c[0] = c[0].substr(5);
+                c[c.length-1] = c[c.length-1].substr(0, c[c.length-1].length-5);
+
+                var y = row[ind-1];
+                var z = y.split("], [");
+
+                for (var w=0; w<z.length; w++) {
+                    if (!z[w].includes("nan")) {
+                        z[w] = z[w].split("&#39;, &#39;");
+                        z[w][0] = z[w][0].substr(5);
+                        z[w][z[w].length-1] = z[w][z[w].length-1].substr(0, z[w][z[w].length-1].length-5);
+                    }
+                    else {
+                        z[w] = z[w].split(", ");
+                        for (var t=0; t<z[w].length; t++) {
+                            z[w][t] = z[w][t].replace("&#39;", "");
+                        }
+                        for (var t=0; t<z[w].length; t++) {
+                            z[w][t] = z[w][t].replace("&#39;", "");
+                        }
+                    }
+                }
+
+                tab = document.getElementById("report");
+                tab.innerHTML = "";
+                var s = "";
+                s += '<tr style="background-color:whitesmoke">';
+                for (var l=0; l<c.length; l++) {
+                    s += "<th>" + c[l] + "</th>";
+                }
+                s += "</tr>";
+                for (var r=0; r<z.length; r++) {
+                    s += "<tr>";
+                    for (var p=0; p<z[r].length; p++) {
+                        s += "<td>" + z[r][p] + "</td>";
+                    }
+                    s += "</tr>";
+                }
+                tab.innerHTML = s;
+            }
+        }
+
+        // DOWNLOAD CSV FUNCTION
+
+        function downloadCSV(csv, filename) {
+            var csvFile;
+            var downloadLink;
+
+            csvFile = new Blob([csv], {type: "text/csv"});
+            downloadLink = document.createElement("a");
+            downloadLink.download = filename;
+            downloadLink.href = window.URL.createObjectURL(csvFile);
+            downloadLink.style.display = "none";
+            document.body.appendChild(downloadLink);
+            downloadLink.click()
+        }
+
+        var download_b = document.createElement("button");
+        download_b.setAttribute("class", "download_b");
+        download_b.id =  "download_b";
+        download_b.innerHTML = "Download CSV";
+        document.body.append(download_b);
+        download_b.onclick = function () {
+            var csv = [];
+            var rows = document.querySelectorAll("table tr");
+            // console.log(rows)
+            for (var i = 0; i < rows.length; i++) {
+                var row = [], cols = rows[i].querySelectorAll("td, th");
+                for (var j = 0; j < cols.length; j++) {
+                    // console.log(cols);
+                    row.push(cols[j].innerText);
+                }
+                csv.push(row.join(","));
+            }
+            csv = csv.join("\n");
+            // console.log(csv);
+            downloadCSV(csv, "{{date}}" + " page" + cur + ".csv");
+        }
+
+        //DOWNLOAD EXCEL
+
+        // var download_b = document.createElement("button");
+        // download_b.setAttribute("class", "download_b");
+        // download_b.style.width = "170px";
+        // download_b.style.left = "20px";
+        // download_b.id =  "download_e";
+        // download_b.innerHTML = "Download Excel";
+        // document.body.append(download_b);
+        // download_b.onclick = exportTableToExcel("report", "report" + "{{date}}" + "page" + cur);
+
+        function exportTableToExcel(tableID, filename = '') {
+            var downloadLink;
+            var dataType = 'application/vnd.ms-excel';
+            var tableSelect = document.getElementById(tableID);
+            console.log(tableSelect);
+            var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+            // Specify file name
+            filename = filename?filename+'.xls':'excel_data.xls';
+
+            // Create download link element
+            downloadLink = document.createElement("a");
+            document.body.appendChild(downloadLink);
+
+            if(navigator.msSaveOrOpenBlob) {
+                var blob = new Blob(['\ufeff', tableHTML], {
+                    type: dataType
+                });
+                navigator.msSaveOrOpenBlob( blob, filename);
+            }
+            else {
+                downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+                downloadLink.download = filename;
+                downloadLink.click();
+            }
+        }
+
+    </script>
+
+    <button id="download_e" class="download_b" style="left: 20px; width: 170px" onclick="exportTableToExcel('report','{{date}}' + ' page' + cur)">Download Excel</button>
+
+
+<!--    FIRST PAGE   -->
+
+    <br><br>
+    <table id="report">
+        <tr style="background-color:whitesmoke">
+            {% for col in columns_names_list[0] %}
+                <th>{{col}}</th>
+            {% endfor %}
+        </tr>
+        {% for row in row_data_list[0] %}
+            <tr>
+            {% for row_ in row %}
+                <td>{{row_}}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+
+    </table>
+
+    {{ tables|safe }}
+
+{% endblock %}

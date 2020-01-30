@@ -1,0 +1,425 @@
+h1 {
+    align-self: center;
+    position: relative;
+    left: 50px;
+    font-family: Candara;
+    font-size: 50px;
+    color: darkblue;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+h2 {
+    align-self: center;
+    position: relative;
+    left: 10px;
+    font-family: Candara;
+    font-size: 50px;
+    color: darkblue;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.home {
+    font-family: Candara;
+    font-size: 30px;
+    color: darkblue;
+}
+
+.back {
+    font-family: Candara;
+    font-size: 30px;
+    color: darkblue;
+    position: relative;
+    left: 10px;
+}
+
+.operator_button {
+    font-family: Candara;
+    position: relative;
+    left: 50px;
+    top: 10px;
+    background-color: mediumblue;
+    color: white;
+    width: 475px;
+    height: 75px;
+    text-align: center;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.operator_button:hover {
+    background-color: darkblue;
+}
+.operator_button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.operator_button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -60px;
+    transition: 0.5s;
+}
+.operator_button:hover span {
+    padding-right:50px;
+}
+.operator_button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.engineer_button {
+    font-family: Candara;
+    position: relative;
+    left: 50px;
+    top: 30px;
+    background-color: mediumblue;
+    color: white;
+    width: 475px;
+    height: 75px;
+    text-align: center;
+    font-size: 40px;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 20px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19)
+}
+.engineer_button:hover {
+    background-color: darkblue;
+}
+.engineer_button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.engineer_button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -60px;
+    transition: 0.5s;
+}
+.engineer_button:hover span {
+    padding-right:50px;
+}
+.engineer_button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.logo {
+    border: 2px solid steelblue;
+    position: absolute;
+    left: 10px;
+    top: 91%;
+    vertical-align: bottom;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.company_descrption {
+    font-weight: bolder;
+    font-family: Candara;
+    color: white;
+    position: absolute;
+    font-size: 15px;
+    left: 210px;
+    top: 92.5%;
+    margin: 0;
+}
+
+.bottom_line {
+    position: absolute;
+    left: -10px;
+    top: 90.5%;
+    width: 101% ;
+    height: 95px;
+    margin: 0;
+}
+
+.date_select {
+    position: relative;
+    left: 20px;
+    background-color: lightskyblue;
+    color: black;
+    padding: 5px 5px;
+    border: 2px solid steelblue;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 5px 10px 0 rgba(0,0,0,0.19);
+}
+
+.date_p {
+    align-self: center;
+    position: relative;
+    left: 10px;
+    font-family: Candara;
+    font-size: 40px;
+    color: darkblue;
+    text-shadow: -0.7px 0 white, 0 0.7px white, 0.7px 0 white, 0 -0.7px white;
+}
+
+.operator_points {
+    align-self: center;
+    position: relative;
+    font-family: Arial;
+    font-size: 20px;
+    color: darkblue;
+}
+
+.note {
+    align-self: center;
+    position: relative;
+    left: 10px;
+    font-style: italic;
+    font-family: Candara;
+    font-size: 15px;
+    color: black;
+    display: block;
+}
+
+.note_empty {
+    line-height: 5;
+}
+
+.date_submit {
+    font-family: Candara;
+    position: relative;
+    left: 20px;
+    top: 10px;
+    background-color: mediumblue;
+    color: white;
+    width: 475px;
+    height: 75px;
+    text-align: center;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 3px solid steelblue;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.date_submit:hover {
+    background-color: darkblue;
+}
+
+form {
+    position: relative;
+    top: -25px;
+    left: 10px;
+    width: 600px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    padding: 20px;
+    border: 4px solid steelblue;
+}
+
+#report table {
+    font-family: arial, sans-serif;
+    border: 3px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#report td, th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+
+#report tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+#report tr:nth-child(odd) {
+    background-color: white;
+}
+
+.page {
+    font-family: Candara;
+    position: relative;
+    top: 0;
+    background-color: mediumblue;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    border: 3px solid steelblue;
+}
+.page:hover {
+    background-color: darkblue;
+}
+
+.set_report {
+    font-family: Candara;
+    position: relative;
+    left: 20px;
+    top: 10px;
+    background-color: mediumblue;
+    color: white;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 3px solid steelblue;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.set_report:hover {
+    background-color: darkblue;
+}
+
+.number {
+    font-family: Candara;
+    position: relative;
+    left: 20px;
+    top: 4px;
+    background-color: lightskyblue;
+    color: black;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    font-size: 35px;
+    cursor: text;
+    border-radius: 5px;
+    border: 3px solid steelblue;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.input_points {
+    font-family: Candara;
+    position: relative;
+    left: 30px;
+    top: 0px;
+    background-color: mediumblue;
+    color: white;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 3px solid steelblue;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.input_points:hover {
+    background-color: darkblue;
+}
+
+.thin {
+    display: block;
+    line-height: 50px;
+    margin-bottom: 4em;
+}
+
+.choose_points {
+    position: relative;
+    left: 20px;
+    background-color: lightskyblue;
+    width: 500px;
+    color: black;
+    padding: 5px 5px;
+    border: 2px solid steelblue;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    margin: 5px 0px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 5px 10px 0 rgba(0,0,0,0.19);
+    cursor: text;
+}
+
+.point_i {
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.minutes {
+    align-self: center;
+    position: relative;
+    left: 30px;
+    font-family: Candara;
+    font-size: 40px;
+    color: darkblue;
+    text-shadow: -0.7px 0 white, 0 0.7px white, 0.7px 0 white, 0 -0.7px white;
+}
+
+.tit {
+    align-self: center;
+    position: relative;
+    left: 10px;
+    font-family: Candara;
+    font-size: 30px;
+    color: darkblue;
+    text-shadow: -0.7px 0 white, 0 0.7px white, 0.7px 0 white, 0 -0.7px white;
+}
+
+.engineer_points {
+    align-self: center;
+    position: relative;
+    left: 20px;
+    font-family: Arial;
+    font-size: 20px;
+    color: darkblue;
+    text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
+}
+
+.note2 {
+    align-self: center;
+    position: relative;
+    left: 10px;
+    font-style: italic;
+    font-family: Candara;
+    font-size: 20px;
+    color: black;
+    display: block;
+}
+
+.download_b {
+    font-family: Candara;
+    font-weight: bolder;
+    position: relative;
+    top: 0;
+    left: 10px;
+    background-color: lightblue;
+    color: black;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    border: 3px solid steelblue;
+    border-radius: 10px;
+}
+
+.download_b:hover {
+    background-color: skyblue;
+}
+
+.wrong_password {
+    align-self: center;
+    position: relative;
+    left: 20px;
+    font-style: italic;
+    font-family: Candara;
+    font-size: 15px;
+    color: red;
+    display: block;
+}
+
+.remember_me {
+    position: relative;
+    left: 20px;
+    font-family: Candara;
+    font-size: 20px;
+}

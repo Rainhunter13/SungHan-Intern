@@ -1,0 +1,53 @@
+{% extends "base_no_bottom.html" %}
+
+{% block content %}
+    <h1 style="left: 20px">Please, enter server details:</h1>
+
+    <form method="POST" id="login_form" style="width: 500px">
+
+        <input type="text" id="ip" class="choose_points" style="width: 400px" placeholder="Enter IP Address" name="ip" required>
+        <script>
+            document.getElementById("ip").defaultValue = '{{ip}}';
+        </script>
+        <br>
+
+<!--        <b class="date_p" style="left: 22px; font-size: 35px; color: black">choose version: </b>-->
+<!--        <select class="date_select" style="left: 27px; font-size: 25px" id="version" name="version">-->
+<!--            <option id="3" value=3>Niagara AX</option>-->
+<!--            <option id="4" value=4>Niagara 4.0</option>-->
+<!--        </select>-->
+<!--        <script>-->
+<!--            document.getElementById("version").value = '{{version}}';-->
+<!--        </script>-->
+<!--        <br>-->
+
+        <input type="text" id="username" class="choose_points" style="width: 400px" placeholder="Enter Username" name="username" required>
+        <script>
+            document.getElementById("username").defaultValue = '{{username}}';
+        </script>
+
+        <input type="password" id="password" class="choose_points" style="width: 400px" placeholder="Enter Password" name="password" required>
+        <script>
+            document.getElementById("password").defaultValue = '{{password}}';
+        </script>
+
+        <br>
+        <a class="remember_me">{{ form.remember_me() }} {{ form.remember_me.label }}</a>
+
+        <br>
+        <button type="submit" class="set_report">Login</button>
+        <br><br>
+
+        <script>
+            if ("{{error}}"=="1") {
+                var x = document.createElement("b");
+                var login_form = document.getElementById("login_form");
+                x.innerHTML = "Wrong IP/Username/Password. Please, try again.";
+                x.className = "wrong_password";
+                login_form.appendChild(x);
+            }
+        </script>
+
+    </form>
+
+{% endblock %}

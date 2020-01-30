@@ -1,0 +1,23 @@
+{% extends "base_no_bottom.html" %}
+
+{% block content %}
+    <h1 align="center">SUNGHAN CORPORATION</h1>
+    <h2>Report for {{date}} :</h2>
+
+    <p id="lol"></p>
+
+    <script>
+        var n = '{{n_reports}}'
+        for (var i=1; i<=n; i++) {
+            document.getElementById("lol").innerHTML = i;
+            document.getElementById("lol").setAttribute("class", "date_p")
+            var btn =  document.createElement("button")
+            btn.setAttribute("class", "")
+            document.body.appendChild(btn);
+            btn.innerHTML = "Page " + i.toString();
+        }
+    </script>
+
+    {{ tables[0]|safe }}
+
+{% endblock %}

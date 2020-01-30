@@ -1,0 +1,31 @@
+{% extends "base_no_bottom.html" %}
+
+{% block content %}
+    <br><br>
+    <b class="date_p">REPORT SUCCESSFULLY SET.</b>
+
+    <br><br>
+    <b class="tit">IP:</b>
+    <b class="engineer_points">{{ip}}</b>
+
+    <br><br>
+    <b class="tit">Station:</b>
+    <b class="engineer_points">{{station}}</b>
+
+    <br><br>
+    <b class="tit">POINTS:</b>
+    <br><br>
+
+    {% for point in points %}
+        <b class="engineer_points">{{point}}</b>
+        <br>
+    {% endfor %}
+
+    <br><br>
+    <b class="tit">TIME INTERVAL:  </b>
+    <br><br>
+    <b class="engineer_points">{{interval}} MINUTES</b>
+    <br><br>
+    <b class="note2">*In order to see the report, please go to the home page and login as operator</b>
+
+{% endblock %}

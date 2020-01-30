@@ -1,0 +1,127 @@
+{% extends "base_no_bottom.html" %}
+
+{% block content %}
+    <h2>Please, set the details of report:</h2>
+
+    <form method="POST">
+
+        <b class="date_p">Date:</b>
+        <select class="date_select" id="year" name="year">
+            <option value={{today_year}}>{{today_year}}</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+        </select>
+
+        <select class="date_select" id="month" name="month">
+            <option value={{today_month}}>{{today_month}}</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+
+        <select class="date_select" id="day" name="day">
+            <option value={{today_day}}>{{today_day}}</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+
+        <br><br>
+
+        <b class="date_p">Number of points per page:</b>
+
+        <select class="date_select" id="columns" name="columns">
+            <option value=01>01</option>
+            <option value=02>02</option>
+            <option value=03>03</option>
+            <option value=04>04</option>
+            <option value=05 selected>05</option>
+            <option value=06>06</option>
+            <option value=07>07</option>
+            <option value=08>08</option>
+            <option value=09>09</option>
+            <option value=10>10</option>
+            <option value=11>11</option>
+            <option value=12>12</option>
+            <option value=13>13</option>
+            <option value=14>14</option>
+            <option value=15>15</option>
+        </select>
+
+        <br><br>
+        <b class="date_p">IP: </b>
+        <b class="operator_points" style="left: 20px; font-size: 25px">{{ip}}</b>
+
+        <br><br>
+        <b class="date_p">Station: </b>
+        <b class="operator_points" style="left: 20px; font-size: 25px">{{station}}</b>
+
+        <br><br>
+        <b class="date_p">Points:<br></b>
+        <b class="operator_points">{{points}}</b>
+
+        <br><br>
+        <b class="date_p">Time Interval:<br></b>
+        <b class="operator_points" style="font-size: 25px">{{interval}} minutes</b>
+
+        <b class="note">*only engineer can choose ip, station, points and time interval</b>
+
+        <input class="date_submit" type="submit" name="show_report" value="Show Report">
+    </form>
+
+{% endblock %}

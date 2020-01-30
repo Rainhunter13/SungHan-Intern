@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Please, choose the date for report:</h2>
+
+    <form class="dateform" action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.date.label }}
+            {{ form.date(size=32) }}
+            {% for error in form.date.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+{% endblock %}

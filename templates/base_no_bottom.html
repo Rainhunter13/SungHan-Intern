@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Welcome</title>
+        {% endif %}
+
+        <link rel="stylesheet" type="text/css" href="../static/styles.css">
+
+    </head>
+
+    <body class="body" style="background-color: #85C1E9">
+        <a href="{{ url_for('index') }}" class="home">Home</a>
+        <script>
+            document.write('<a href="' + document.referrer + '" class="back">Back</a>');
+        </script>
+        <hr color="white" width="100%">
+
+        {% block content %}{% endblock %}
+
+    </body>
+
+</html>

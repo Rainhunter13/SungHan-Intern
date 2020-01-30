@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Please choose the points to display in report:</h2>
+
+    <script>
+        function addFields(){
+            var number = document.getElementById("member").value;
+            var container = document.getElementById("container");
+            while (container.hasChildNodes()) {
+                container.removeChild(container.lastChild);
+            }
+            for (i=0;i<number;i++){
+                // Append a node with a random text
+                container.appendChild(document.createTextNode("Member " + (i+1)));
+                // Create an <input> element, set its type and name attributes
+                var input = document.createElement("input");
+                input.type = "text";
+                input.name = "member" + i;
+                container.appendChild(input);
+                container.appendChild(document.createElement("br"));
+            }
+        }
+    </script>
+
+    <input class="date_select" type="text" id="member" name="member" value="">Number of members: (max. 10)<br />
+    <a href="#" id="filldetails" onclick="addFields()">Fill Details</a>
+    <div id="container"/>
+
+{% endblock %}

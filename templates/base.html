@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Welcome</title>
+        {% endif %}
+
+        <link rel="stylesheet" type="text/css" href="../static/styles.css">
+
+    </head>
+
+    <body class="body" style="background-color: #85C1E9">
+        <a href="{{ url_for('index') }}" class="home">Home</a>
+        <hr color="white" width="100%">
+
+        {% block content %}{% endblock %}
+
+        <hr class="bottom_line" color="#0269AE">
+        <img class="logo" src="/static/logo.png" alt="LOGO" height="77" width="182.6" align="center">
+        <pre class="company_descrption">
+대전광역시 유성구 대학로76번길 71 (궁동) 호산빌딩 2층
+Tel. 042-861-2268   Mail. sunghan@sunghan.net
+Copyright © SungHan Co., Ltd All rights reserved.
+        </pre>
+    </body>
+
+</html>

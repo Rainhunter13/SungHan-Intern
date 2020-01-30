@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Please, choose your position:</h1>
+    <div>
+        <a href="{{ url_for('operator') }}"><button class="operator_button"><span>I am operator</span></button></a>
+    </div>
+    <div>
+        <a onclick="check_login()"><button class="engineer_button"><span>I am engineer</span></button></a>
+    </div>
+
+    <script>
+        function check_login() {
+                window.location.href = "/login";
+        }
+    </script>
+
+{% endblock %}

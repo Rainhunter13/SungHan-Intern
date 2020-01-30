@@ -1,0 +1,106 @@
+{% extends "base_no_bottom.html" %}
+
+{% block content %}
+    <h2>Please choose the details of the report:</h2>
+
+    <form method="POST" novalidate>
+        {{ form.hidden_tag() }}
+
+        <script>
+            function addFields(){
+                var m = parseInt('{{m}}')
+                var points = '{{points}}';
+                points = points.substr(6, points.length-12);
+                var p = points.split("&#39;, &#39;");
+                var number = document.getElementById("number").value;
+                var container = document.getElementById("container");
+                while (container.hasChildNodes()) {
+                    container.removeChild(container.lastChild);
+                }
+                for (var i=0; i<number; i++){
+                    var tx = document.createElement("b");
+                    tx.innerHTML = "Point " + (i+1).toString();
+                    tx.className = "point_i";
+                    container.appendChild(tx);
+                    var input = document.createElement("input");
+                    input.className = "choose_points";
+                    input.type = "text";
+                    input.name = "point" + (i+1).toString();
+                    if (i<m) input.value = p[i];
+                    container.appendChild(input);
+                    var br = document.createElement("br");
+                    br.className = "thin";
+                    container.append(br);
+                    container.append(br);
+                }
+                var set = document.createElement("input");
+                set.className = "set_report";
+                set.type = "submit";
+                set.name = "set_report";
+                set.value = "Set Report";
+                container.append(set);
+                container.append(document.createElement("br"));
+            }
+        </script>
+
+        <b class="date_p">IP: </b>
+        <b class="operator_points" style="left: 20px; font-size: 25px">{{ip}}</b>
+        <a href="{{ url_for('logout') }}" class="home" style="position: relative; left: 50px">change IP</a>
+        <br><br>
+
+        <b class="date_p">Station Name:</b>
+        <input type="text" class="choose_points" style="width: 320px" value="{{station}}" name="station" required>
+        <br><br>
+
+
+
+        <b class="date_p">Time Interval:</b>
+        <input type="text" class="number" id="interval" name="interval" value="{{interval}}">
+        <b class="minutes">minutes</b>
+        <br><br>
+
+        <b class="date_p">Number of Points:</b>
+        <input type="text" class="number" id="number" name="number" value={{m}}>
+        <button id="filldetails" class="input_points" onclick="addFields()">Input Points</button>
+        <br><br>
+        <div id="container"/>
+
+        <script>
+            var m = parseInt('{{m}}');
+            if (m>0) {
+                var container = document.getElementById("container");
+                var points = '{{points}}';
+                points = points.substr(6, points.length-12);
+                var p = points.split("&#39;, &#39;");
+                console.log(p);
+                while (container.hasChildNodes()) {
+                    container.removeChild(container.lastChild);
+                }
+                for (var i=0; i<m; i++){
+                    var tx = document.createElement("b");
+                    tx.innerHTML = "Point " + (i+1).toString();
+                    tx.className = "point_i";
+                    container.appendChild(tx);
+                    var input = document.createElement("input");
+                    input.className = "choose_points";
+                    input.type = "text";
+                    input.name = "point" + (i+1).toString();
+                    input.value = p[i];
+                    container.appendChild(input);
+                    var br = document.createElement("br");
+                    br.className = "thin";
+                    container.append(br);
+                    container.append(br);
+                }
+                var set = document.createElement("input");
+                set.className = "set_report";
+                set.type = "submit";
+                set.name = "set_report";
+                set.value = "Set Report";
+                container.append(set);
+                container.append(document.createElement("br"));
+            }
+        </script>
+
+    </form>
+{% endblock %}
