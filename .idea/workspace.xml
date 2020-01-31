@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8b75f32-6643-48a9-9cf5-e90f3bc579ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/parse2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/parse2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/draft.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft.py" beforeDir="false" afterPath="$PROJECT_DIR$/unused/draft.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/draft.html" beforeDir="false" afterPath="$PROJECT_DIR$/unused/draft.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unused/app_sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/unused/app_sample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unused/backend.py" beforeDir="false" afterPath="$PROJECT_DIR$/unused/parse.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,18 +57,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\u\PycharmProjects\parse2" />
-      <recent name="C:\Users\u\PycharmProjects\parse2\Static" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\u\PycharmProjects\parse2\unused" />
       <recent name="C:\Users\u\PycharmProjects\parse2\templates" />
       <recent name="C:\Users\u\PycharmProjects\parse2" />
-      <recent name="C:\Users\u\PycharmProjects\parse2\unused" />
       <recent name="C:\Users\u\PycharmProjects\parse2\static" />
+      <recent name="C:\Users\u\PycharmProjects\parse2\Static" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\u\PycharmProjects\parse2" />
       <recent name="C:\Users\u\PycharmProjects\parse2\Static" />
     </key>
   </component>
@@ -93,7 +95,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="draft" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="draft (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="parse2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -101,12 +103,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unused" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/draft.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unused/draft.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -115,7 +117,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="login_AX" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="login_N4 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="parse2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,12 +125,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unused" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\u\PycharmProjects\parse2\unused\login_AX.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unused/login_N4.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,10 +186,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
-        <item itemvalue="Python.login_AX (1)" />
+        <item itemvalue="Python.draft (1)" />
+        <item itemvalue="Python.login_N4" />
         <item itemvalue="Python.login_N4 (1)" />
         <item itemvalue="Python.session_not_expire" />
-        <item itemvalue="Python.draft" />
       </list>
     </recent_temporary>
   </component>
@@ -240,12 +242,25 @@
       <workItem from="1579651802823" duration="21862000" />
       <workItem from="1580170364812" duration="26538000" />
       <workItem from="1580256251923" duration="18592000" />
-      <workItem from="1580342429084" duration="16574000" />
+      <workItem from="1580342429084" duration="20778000" />
+      <workItem from="1580428852563" duration="19982000" />
     </task>
+    <task id="LOCAL-00001" summary="&quot;commit with Pycharm&quot;">
+      <created>1580368368721</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580368368721</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;commit with Pycharm&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;commit with Pycharm&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="182" key="#Inspections" timestamp="1580364829317">
@@ -264,6 +279,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="723" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1578470167393" />
+    <state x="717" y="362" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1580446818436">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="717" y="362" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580446818436" />
+    <state x="592" y="118" key="CommitChangelistDialog2" timestamp="1580368368107">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="592" y="118" key="CommitChangelistDialog2/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580368368107" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1580366652273">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -280,25 +303,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="652" y="228" key="Github.UntrackedFilesDialog/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580350465713" />
-    <state width="938" height="268" key="GridCell.Tab.0.bottom" timestamp="1580366532623">
+    <state width="1877" height="206" key="GridCell.Tab.0.bottom" timestamp="1580454958667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580366532623" />
+    <state width="1877" height="206" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580454958667" />
     <state width="1877" height="72" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577174462988" />
-    <state width="938" height="268" key="GridCell.Tab.0.center" timestamp="1580366532623">
+    <state width="1877" height="206" key="GridCell.Tab.0.center" timestamp="1580454958666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="268" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580366532623" />
+    <state width="1877" height="206" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580454958666" />
     <state width="1877" height="72" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577174462988" />
-    <state width="938" height="268" key="GridCell.Tab.0.left" timestamp="1580366532623">
+    <state width="1877" height="206" key="GridCell.Tab.0.left" timestamp="1580454958666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="268" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580366532623" />
+    <state width="1877" height="206" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580454958666" />
     <state width="1877" height="72" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577174462988" />
-    <state width="938" height="268" key="GridCell.Tab.0.right" timestamp="1580366532623">
+    <state width="1877" height="206" key="GridCell.Tab.0.right" timestamp="1580454958666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="268" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580366532623" />
+    <state width="1877" height="206" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580454958666" />
     <state width="1877" height="72" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577174462988" />
     <state width="1877" height="488" key="GridCell.Tab.1.bottom" timestamp="1579683701218">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -316,31 +339,31 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="488" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1579683701218" />
-    <state x="463" y="165" key="SettingsEditor" timestamp="1580366361603">
+    <state x="463" y="165" key="SettingsEditor" timestamp="1580446860967">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="463" y="165" key="SettingsEditor/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580366361603" />
+    <state x="463" y="165" key="SettingsEditor/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580446860967" />
     <state x="807" y="441" key="VCS.ChangelistChooser" timestamp="1580366629606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="441" key="VCS.ChangelistChooser/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580366629606" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1580352222685">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1580368395478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580352222685" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580368395478" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1579251028152">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1579251028152" />
-    <state x="664" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1580342438078">
+    <state x="664" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1580428911573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="664" y="348" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580342438078" />
+    <state x="664" y="348" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580428911573" />
     <state x="664" y="348" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577156513826" />
-    <state x="766" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580360561164">
+    <state x="766" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580452906213">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="766" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580360561164" />
+    <state x="766" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.-304.1920.1040@0.0.1920.1040" timestamp="1580452906213" />
     <state x="-6" y="171" width="1736" height="856" key="dock-window-1" timestamp="1579480220180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -370,7 +393,7 @@
     <SUITE FILE_PATH="coverage/parse2$parse_ONOFF__1_.coverage" NAME="parse_ONOFF (1) Coverage Results" MODIFIED="1577773154236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$temp_report.coverage" NAME="temp_report Coverage Results" MODIFIED="1578031790897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$draft.coverage" NAME="draft Coverage Results" MODIFIED="1579669613822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/parse2$app.coverage" NAME="app Coverage Results" MODIFIED="1580365307634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/parse2$app.coverage" NAME="app Coverage Results" MODIFIED="1580454958657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$mura_eshak.coverage" NAME="mura_eshak Coverage Results" MODIFIED="1578472092197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$login5.coverage" NAME="login5 Coverage Results" MODIFIED="1577426435798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$input.coverage" NAME="input Coverage Results" MODIFIED="1578617943649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -379,7 +402,7 @@
     <SUITE FILE_PATH="coverage/parse2$draft2.coverage" NAME="login_N4 Coverage Results" MODIFIED="1579589092932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$BACKEND__1_.coverage" NAME="BACKEND (1) Coverage Results" MODIFIED="1577926618783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$web_sample.coverage" NAME="web_sample Coverage Results" MODIFIED="1577952541031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/parse2$login_N4__1_.coverage" NAME="login_N4 (1) Coverage Results" MODIFIED="1580172625375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/parse2$login_N4__1_.coverage" NAME="login_N4 (1) Coverage Results" MODIFIED="1580446692147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unused" />
     <SUITE FILE_PATH="coverage/parse2$session_not_expire.coverage" NAME="session_not_expire Coverage Results" MODIFIED="1579675226236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unused" />
     <SUITE FILE_PATH="coverage/parse2$web1.coverage" NAME="web1 Coverage Results" MODIFIED="1577322765448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$login_post.coverage" NAME="login_post Coverage Results" MODIFIED="1579660780674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unused" />
@@ -392,11 +415,13 @@
     <SUITE FILE_PATH="coverage/parse2$parse_Temp.coverage" NAME="parse_Temp Coverage Results" MODIFIED="1577759451485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$matol_basicAuth__1_.coverage" NAME="matol_basicAuth (1) Coverage Results" MODIFIED="1577678749531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$login.coverage" NAME="login1 Coverage Results" MODIFIED="1577347093875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/parse2$login_N4.coverage" NAME="login_N4 Coverage Results" MODIFIED="1580451580987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$matol_queryString__1_.coverage" NAME="matol_queryString (1) Coverage Results" MODIFIED="1577435732870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$SESSION_NOT_EXPIRE__1_.coverage" NAME="SESSION_NOT_EXPIRE (1) Coverage Results" MODIFIED="1578013823626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$login2.coverage" NAME="login2 Coverage Results" MODIFIED="1577349895680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$matol_basic_auth.coverage" NAME="matol_basicAuth Coverage Results" MODIFIED="1577435351226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$login_basicAuth.coverage" NAME="login_basicAuth Coverage Results" MODIFIED="1577683145973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/parse2$draft__1_.coverage" NAME="draft (1) Coverage Results" MODIFIED="1580454812001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unused" />
     <SUITE FILE_PATH="coverage/parse2$draft3.coverage" NAME="draft3 Coverage Results" MODIFIED="1577777691704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$login4.coverage" NAME="login4 Coverage Results" MODIFIED="1577422426775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parse2$matol.coverage" NAME="matol_post Coverage Results" MODIFIED="1577427926944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
