@@ -1,3 +1,5 @@
+# MAIN ENGINE OF THE APPLICATION
+
 # IMPORT FUNCTIONS FROM OTHER FILES
 from backend import temp_find_interval
 

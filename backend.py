@@ -1,3 +1,5 @@
+# MAIN FUNCTIONS IMPLEMENTATION
+
 # LIBRARIES
 import requests
 from pyhaystack.client.niagara import NiagaraHaystackSession
@@ -5,6 +7,7 @@ from pyhaystack.client.niagara import Niagara4HaystackSession
 from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
+from time import sleep
 
 
 # AUTHENTICATION FOR NIAGARA AX - RETURNS SESSION ID
@@ -28,40 +31,47 @@ def session_id_n4(ip, username, password):
 def set_cookies(ip, username, password, version):
     if version == "3":
         #  niagara AX
-        cooki = {
+        cook = {
             "niagara_login_state": "false",
             "niagara_login_state_data": "false",
             "niagara_session": session_id_ax(ip, username, password)
         }
     else:
         #  niagara N4
-        cooki = {
-            "niagara_userid": username,
-            "JSESSIONID": session_id_n4(ip, username, password)
+        cook = {
+            "JSESSIONID": session_id_n4(ip, username, password),
+            "niagara_userid": username
         }
-    return cooki
+    return cook
 
 
-# RETURNS TWO-DIMENSIONAL ARRAY OF REPORT VALUES FOR CERTAIN IP, STATION, TIME PERIOD
+# FIND TEXT OF REQUEST RESPONSE FOR CERTAIN IP, STATION, TIME PERIOD
 def report(username, password, tool_name, period_name, station, ip, version):
     # get cookies from authentication
     cookies = set_cookies(ip, username, password, version)
+    i = 0.1
+    while not requests.get(url="http://" + ip + "/obix/histories/", cookies=cookies).text.__contains__("histories"):
+        # if cookies were set not correctly, reset them (it could happens sometimes)
+        print("request error")
+        cookies = set_cookies(ip, username, password, version)
+        i*=2
+        sleep(i)
+        if i>5:
+            return "Connection error. Please, try again."
 
     # check is station exists (check ../histories for all stations)
     url = "http://" + ip + "/obix/histories/"
-    r = requests.get(url=url, cookies=cookies).text
-    t = BeautifulSoup(r.replace('\r', '').replace('\n', '').replace('\\', '').replace('rn', ''), 'html.parser')
+    r = requests.get(url=url, cookies=cookies)
+    tx = r.text
+    t = BeautifulSoup(tx.replace('\r', '').replace('\n', '').replace('\\', '').replace('rn', ''), 'html.parser')
     tags = t.find_all("ref")
     all_stations = []
     for tag in tags:
         all_stations.append(tag["name"])
-    # print(r)
-    # print(all_stations)
     if station not in all_stations:
         return "Station '" + station + "' does not exist. Please check the spelling."
 
     # check if point exists (try to access ../station/point and see if error)
-    cookies = set_cookies(ip, username, password, version)
     url = url + station + "/" + tool_name
     tool_req = requests.get(url=url, cookies=cookies)
     tool_text = tool_req.text
@@ -75,10 +85,13 @@ def report(username, password, tool_name, period_name, station, ip, version):
     period_url = url + '/' + tag['href']
 
     # main request for recordings page
-    cookies = set_cookies(ip, username, password, version)
     period_req = requests.get(url=period_url, cookies=cookies)
     period_text = period_req.text
+    return parse(period_text)
 
+
+# RETURNS TWO-DIMENSIONAL ARRAY OF REPORT VALUES FOR GIVEN REQUEST RESPONSE TEXT (HTML)
+def parse(period_text):
     # parse for recordings values
     period_soup = BeautifulSoup(period_text.replace('\r', '').replace('\n', '').replace('\\', '').replace('rn', ''),
                                 'html.parser')
@@ -110,7 +123,7 @@ def report(username, password, tool_name, period_name, station, ip, version):
     return data
 
 
-# RETURN DATAFRAME OF VALUES FOR SPECIFIC DATE
+# RETURN DATA-FRAME OF VALUES FOR SPECIFIC DATE
 def temp_find_date(username, password, temp_point_name, temp_period_name, date, station, ip, version):
     data = report(username, password, temp_point_name, temp_period_name, station, ip, version)
     if isinstance(data, str):
@@ -133,13 +146,14 @@ def temp_find_interval(username, password, temp_point_names, temp_period_name, d
     if isinstance(ans, str):
         return ans
     # concatenate all arrays for all points into one data-frame
-    for Temp_point_name in temp_point_names:
-        if Temp_point_name == "":
+    for i in range(1, len(temp_point_names)):
+        temp_point_name = temp_point_names[i]
+        if temp_point_name == "":
             continue
-        x = temp_find_date(username, password, Temp_point_name, temp_period_name, date, station, ip, version)
+        x = temp_find_date(username, password, temp_point_name, temp_period_name, date, station, ip, version)
         if isinstance(x, str):
             return x
-        ans[Temp_point_name] = x[Temp_point_name]
+        ans[temp_point_name] = x[temp_point_name]
     # drop row if corresponding time doesn't match the interval
     drop_rows = []
     for i in range(ans.shape[0]):

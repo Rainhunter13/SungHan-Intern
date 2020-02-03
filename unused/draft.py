@@ -20,6 +20,6 @@ cnt = 0
 while True:
     r = requests.get(url="http://192.168.0.198/obix/histories/", cookies=cookies)
     txt = r.text
-    print(str(i) + " more seconds: " + str(txt.__contains__("rakhman_Station")))
-    i+=0.001
+    print(str(i) + " more seconds: " + str(txt.__contains__("histories")))
+    i+=21
     time.sleep(i)

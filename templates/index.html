@@ -1,14 +1,19 @@
+<!-- HOME PAGE-->
+
 {% extends "base.html" %}
 
 {% block content %}
     <h1>Please, choose your position:</h1>
+<!--operator button-->
     <div>
         <a href="{{ url_for('operator') }}"><button class="operator_button"><span>I am operator</span></button></a>
     </div>
+<!--engineer button-->
     <div>
         <a onclick="check_login()"><button class="engineer_button"><span>I am engineer</span></button></a>
     </div>
 
+<!--if user pushes "engineer", then go to login page first-->
     <script>
         function check_login() {
                 window.location.href = "/login";

@@ -1,22 +1,30 @@
+<!-- BASE OF EVERY PAGE (HOME/BACK BUTTONS, W/O COMPANY LOGO)-->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
 
+<!--    setting page title-->
         {% if title %}
         <title>{{ title }}</title>
         {% else %}
         <title>Welcome</title>
         {% endif %}
 
+<!--    importing styles from css files-->
         <link rel="stylesheet" type="text/css" href="../static/styles.css">
 
     </head>
 
     <body class="body" style="background-color: #85C1E9">
+
+<!--    "home" button-->
         <a href="{{ url_for('index') }}" class="home">Home</a>
+<!--    "back" button-->
         <script>
             document.write('<a href="' + document.referrer + '" class="back">Back</a>');
         </script>
+<!--    line-->
         <hr color="white" width="100%">
 
         {% block content %}{% endblock %}
