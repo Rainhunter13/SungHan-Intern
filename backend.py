@@ -45,8 +45,8 @@ def set_cookies(ip, username, password, version):
     return cook
 
 
-# FIND TEXT OF REQUEST RESPONSE FOR CERTAIN IP, STATION, TIME PERIOD
-def report(username, password, tool_name, period_name, station, ip, version):
+# RETURNS TWO-DIMENSIONAL ARRAY OF REPORT VALUES FOR GIVEN CERTAIN IP, STATION, TIME PERIOD
+def report_table(username, password, tool_name, period_name, station, ip, version):
     # get cookies from authentication
     cookies = set_cookies(ip, username, password, version)
     i = 0.1
@@ -124,8 +124,8 @@ def parse(period_text):
 
 
 # RETURN DATA-FRAME OF VALUES FOR SPECIFIC DATE
-def temp_find_date(username, password, temp_point_name, temp_period_name, date, station, ip, version):
-    data = report(username, password, temp_point_name, temp_period_name, station, ip, version)
+def sort_by_date(username, password, temp_point_name, temp_period_name, date, station, ip, version):
+    data = report_table(username, password, temp_point_name, temp_period_name, station, ip, version)
     if isinstance(data, str):
         return data
     ans = []
@@ -137,11 +137,11 @@ def temp_find_date(username, password, temp_point_name, temp_period_name, date, 
 
 
 # SORTS REPORT DATA-FRAME BY THE TIME INTERVAL
-def temp_find_interval(username, password, temp_point_names, temp_period_name, date, interval, station, ip, version):
+def sort_by_interval(username, password, temp_point_names, temp_period_name, date, interval, station, ip, version):
     # if no points inputted
     if len(temp_point_names) == 0:
         return "No points to show."
-    ans = temp_find_date(username, password, temp_point_names[0], temp_period_name, date, station, ip, version)
+    ans = sort_by_date(username, password, temp_point_names[0], temp_period_name, date, station, ip, version)
     # if invalid input - i.e. returns wrong message
     if isinstance(ans, str):
         return ans
@@ -150,7 +150,7 @@ def temp_find_interval(username, password, temp_point_names, temp_period_name, d
         temp_point_name = temp_point_names[i]
         if temp_point_name == "":
             continue
-        x = temp_find_date(username, password, temp_point_name, temp_period_name, date, station, ip, version)
+        x = sort_by_date(username, password, temp_point_name, temp_period_name, date, station, ip, version)
         if isinstance(x, str):
             return x
         ans[temp_point_name] = x[temp_point_name]

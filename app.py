@@ -1,7 +1,7 @@
 # MAIN ENGINE OF THE APPLICATION
 
 # IMPORT FUNCTIONS FROM OTHER FILES
-from backend import temp_find_interval
+from backend import sort_by_interval
 
 # LIBRARIES
 from flask import Flask, render_template, url_for, request, redirect, session
@@ -116,7 +116,10 @@ def login():
 def check_login(ip, username, password):
     global version
     # find code of the login page of the server
-    text = requests.get("http://" + ip).text
+    try:
+        text = requests.get("http://" + ip).text
+    except:
+        return False
     if text.__contains__("password"):
         # if this code contains "password" field, then it is NIAGARA AX
         version = '3'
@@ -197,7 +200,8 @@ def engineer():
         m = len(session['points'])
         stat = session['station']
         if stat == "":
-            stat = session['all_stations'][len(session['all_stations']) - 1]
+            if len(session['all_stations']) > 0:
+                stat = session['all_stations'][len(session['all_stations']) - 1]
         return render_template("engineer.html", title="Set Report", form=form, points=session['points'], m=m,
                                interval=session['interval'], station=stat, ip=session['ip'])
     t = request.form.get("set_report")
@@ -264,7 +268,7 @@ def operator():
 def show_report(period, date, columns):
     global interval, points, station, ip, version
     # get one big report data-frame for given ip, station, period
-    ds = temp_find_interval(username, password, points, period, date, interval, station, ip, version)
+    ds = sort_by_interval(username, password, points, period, date, interval, station, ip, version)
     # if returns string, means something went wrong (invalid station or points) and it returns wrong message
     if isinstance(ds, str):
         return render_template("wrong_input.html", title="Wrong Input", error_message=ds)
