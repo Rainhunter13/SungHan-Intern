@@ -43,27 +43,30 @@
             }
         </script>
 
-        <b class="date_p">IP: </b>
+        <b class="date_p">&#x2219 IP: </b>
         <b class="operator_points" style="left: 20px; font-size: 25px">{{ip}}</b>
         <a href="{{ url_for('logout') }}" class="home" style="position: relative; left: 50px">change IP</a>
         <br><br>
 
-        <b class="date_p">Station Name:</b>
+        <b class="date_p">&#x2219 Station Name:</b>
         <input type="text" class="choose_points" style="width: 320px" value="{{station}}" name="station" required>
         <br><br>
 
-
-
-        <b class="date_p">Time Interval:</b>
+        <b class="date_p">&#x2219 Time Interval:</b>
         <input type="text" class="number" id="interval" name="interval" value="{{interval}}">
         <b class="minutes">minutes</b>
+        <br><br>
+
+        <b class="date_p">&#x2219 Ignore Seconds in Report</b>
+        <input type="checkbox" name="ignoreSeconds" class="seconds_checkbox" id="ignoreSeconds" value="false">
         <br><br>
 
         <b class="date_p">Number of Points:</b>
         <input type="text" class="number" id="number" name="number" value={{m}}>
         <button id="filldetails" class="input_points" onclick="addFields()">Input Points</button>
         <br><br>
-        <div id="container"/>
+
+        <div id="container"></div>
 
         <script>
             var m = parseInt('{{m}}');

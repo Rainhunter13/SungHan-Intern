@@ -22,6 +22,7 @@ password = ''
 points = []
 interval = 0
 version = ''
+ignore_seconds = False
 
 # DEFAULT PARAMETERS FOR SERVER (INITIALLY HAVEN'T SET YET)
 default_ip = ''
@@ -68,6 +69,7 @@ def session_init():
     session['station'] = ''
     session['interval'] = '10'
     session['points'] = []
+    session['ignore_seconds'] = False
     # all possible stations for the currently choose station
     session["all_stations"] = []
 
@@ -203,7 +205,7 @@ def engineer():
             if len(session['all_stations']) > 0:
                 stat = session['all_stations'][len(session['all_stations']) - 1]
         return render_template("engineer.html", title="Set Report", form=form, points=session['points'], m=m,
-                               interval=session['interval'], station=stat, ip=session['ip'])
+                               interval=session['interval'], station=stat, ip=session['ip'], ignore_seconds = session['ignore_seconds'])
     t = request.form.get("set_report")
     if t is None:
         # if pushes "Input Points" button (i.e. no "set_report" attribute yet in the form), just proceed with same page
@@ -213,10 +215,14 @@ def engineer():
         m = int(request.form['number'])
         session['interval'] = request.form['interval']
         session['station'] = request.form['station']
+        if request.form.__contains__("ignoreSeconds"):
+            session['ignore_seconds'] = True
+        else:
+            session['ignore_seconds'] = False
         session['points'] = []
         for i in range(1, m + 1):
             session['points'].append(request.form["point" + str(i)])
-        global username, password, ip, station, version, interval, points
+        global username, password, ip, station, version, interval, points, ignore_seconds
         # update operator variables
         username = session['username']
         password = session['password']
@@ -225,13 +231,14 @@ def engineer():
         station = session['station']
         interval = session['interval']
         points = session['points']
+        ignore_seconds = session['ignore_seconds']
         # go to next page ("report set successfully")
         return set_report()
 
 
 # "REPORT SUCCESSFULLY SET" PAGE
 def set_report():
-    return render_template("set_report.html", title="Report", points=points, interval=interval, ip=ip, station=station)
+    return render_template("set_report.html", title="Report", points=points, interval=interval, ip=ip, station=station, ignore_seconds = ignore_seconds)
 
 
 # OPERATOR PAGE
@@ -266,9 +273,9 @@ def operator():
 
 # REPORT PAGE
 def show_report(period, date, columns):
-    global interval, points, station, ip, version
+    global interval, points, station, ip, version, ignore_seconds
     # get one big report data-frame for given ip, station, period
-    ds = sort_by_interval(username, password, points, period, date, interval, station, ip, version)
+    ds = sort_by_interval(username, password, points, period, date, interval, station, ip, version, ignore_seconds)
     # if returns string, means something went wrong (invalid station or points) and it returns wrong message
     if isinstance(ds, str):
         return render_template("wrong_input.html", title="Wrong Input", error_message=ds)

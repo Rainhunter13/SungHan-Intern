@@ -137,7 +137,7 @@ def sort_by_date(username, password, temp_point_name, temp_period_name, date, st
 
 
 # SORTS REPORT DATA-FRAME BY THE TIME INTERVAL
-def sort_by_interval(username, password, temp_point_names, temp_period_name, date, interval, station, ip, version):
+def sort_by_interval(username, password, temp_point_names, temp_period_name, date, interval, station, ip, version, ignore_seconds):
     # if no points inputted
     if len(temp_point_names) == 0:
         return "No points to show."
@@ -157,6 +157,8 @@ def sort_by_interval(username, password, temp_point_names, temp_period_name, dat
     # drop row if corresponding time doesn't match the interval
     drop_rows = []
     for i in range(ans.shape[0]):
+        if ignore_seconds:
+            ans['Time'][i] = ans['Time'][i][0:6] + "00"
         if minutes(ans['Time'][i]) % int(interval) != 0:
             drop_rows.append(i)
     ans = ans.drop(index=drop_rows, axis=0)
