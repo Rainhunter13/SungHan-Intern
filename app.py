@@ -1,7 +1,7 @@
 # MAIN ENGINE OF THE APPLICATION
 
 # IMPORT FUNCTIONS FROM OTHER FILES
-from backend import sort_by_interval
+from static.backend import sort_by_interval
 
 # LIBRARIES
 from flask import Flask, render_template, url_for, request, redirect, session
@@ -30,7 +30,14 @@ default_username = ''
 default_password = ''
 
 # CREATE FLASK APP, CONFIGURE SETTINGS
-app = Flask(__name__)
+import os
+import sys
+if getattr(sys, 'frozen', False):
+    template_folder = os.path.join(sys._MEIPASS, 'templates')
+    static_folder = os.path.join(sys._MEIPASS, 'static')
+    app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
+else:
+    app = Flask(__name__)
 app.config['SECRET_KEY'] = 'you-will-never-guess'
 
 
@@ -205,7 +212,8 @@ def engineer():
             if len(session['all_stations']) > 0:
                 stat = session['all_stations'][len(session['all_stations']) - 1]
         return render_template("engineer.html", title="Set Report", form=form, points=session['points'], m=m,
-                               interval=session['interval'], station=stat, ip=session['ip'], ignore_seconds = session['ignore_seconds'])
+                               interval=session['interval'], station=stat, ip=session['ip'],
+                               ignore_seconds=session['ignore_seconds'])
     t = request.form.get("set_report")
     if t is None:
         # if pushes "Input Points" button (i.e. no "set_report" attribute yet in the form), just proceed with same page
@@ -238,7 +246,8 @@ def engineer():
 
 # "REPORT SUCCESSFULLY SET" PAGE
 def set_report():
-    return render_template("set_report.html", title="Report", points=points, interval=interval, ip=ip, station=station, ignore_seconds = ignore_seconds)
+    return render_template("set_report.html", title="Report", points=points, interval=interval, ip=ip, station=station,
+                           ignore_seconds=ignore_seconds)
 
 
 # OPERATOR PAGE
@@ -341,4 +350,4 @@ def set_period(year, month, day):
 
 # RUN THE APP ON THE SERVER
 if __name__ == '__main__':
-    app.run("0.0.0.0", "5000")
+    app.run()
